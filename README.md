@@ -28,7 +28,7 @@ struct Offsets {
 };
 ```
 
-When a new Patch is created only the 1.13c and 1.13d offsets are provided:
+When a new Patch is created only the 1.13c and 1.13d offsets `{ 0x44E51, 0x45EA1 }` are provided:
 ```cpp
 Patch* fpsPatch = new Patch(NOP, D2CLIENT, { 0x44E51, 0x45EA1 }, 0, 8);
 ```
