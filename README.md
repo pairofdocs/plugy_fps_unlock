@@ -32,3 +32,7 @@ When a new Patch is created only the 1.13c and 1.13d offsets `{ 0x44E51, 0x45EA1
 ```cpp
 Patch* fpsPatch = new Patch(NOP, D2CLIENT, { 0x44E51, 0x45EA1 }, 0, 8);
 ```
+
+# Install
+
+Copy PlugY.dll from this [release](https://github.com/pairofdocs/plugy_fps_unlock/releases/tag/v1.0.0) and place it into your `Diablo II/` folder.
