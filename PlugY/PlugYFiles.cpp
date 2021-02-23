@@ -154,6 +154,32 @@ void Install_PlugYFiles()
 		//0041BC81  |. FF15 14C26C00  CALL DWORD PTR DS:[<&KERNEL32.LeaveCriti>; \LeaveCriticalSection
 	}
 
+	// Add FPS cap unlock feature from BH 1.9.9 (write 8 NOPs at seek position)
+	// ________________________________________________________________________
+	// #define R8(Z,A,B,C,D,E,F,G,H,I) (offset_##Z + (version_##Z == V114d? 0x##I : (version_##Z == V113d? 0x##H : (version_##Z == V113c? 0x##G : (version_##Z == V112? 0x##F : (version_##Z == V111b? 0x##E : (version_##Z == V111? 0x##D : (version_##Z == V110? 0x##C : (version_##Z == V109d? 0x##B : 0x##A)))))))))
+    //                offset_D2Client is referenced from initD2modules()  in D2wrapper.cpp
+
+    // only the 113c and 113d offsets are accurate (the 3rd to last and the 2nd to last).
+	// VERSION_113d = 1 in BH code. so maybe the 45EA1 offset won't work
+	int address = R8(D2Client, 0, 0, 0, 0, 0, 0, 44E51, 45EA1, 45EA1);
+	
+    // Initalize variables for the exactly commands we are injecting.
+	int length = 8;
+	BYTE* code = new BYTE[length];
+	DWORD protect;
+
+	// Set the code with all NOPs by default
+	memset(code, 0x90, length);
+
+    // Yohann used VirtualProtect on an R8 address):
+    // VirtualProtect((LPVOID)R8(D2Game,0,0,0,FA480,FA7B8, FA228, FA5F0, FA2C4, 2E11D0), 8, PAGE_EXECUTE_READWRITE, &oldProtection);
+	// Write the patch in
+	VirtualProtect((VOID*)address, length, PAGE_EXECUTE_READWRITE, &protect);
+	memcpy_s((VOID*)address, length, code, length);
+	VirtualProtect((VOID*)address, length, protect, &protect);
+
+	// Do I have to seek back to any address after patching ?   probably no because mem_seek will set a new memposition: currentMemoryPos = (void*)newPos;
+
 	log_msg("\n" );
 
 	isInstalled = true;
