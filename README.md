@@ -24,4 +24,5 @@ BH has not yet added this feature for v1.14+.
 
 # Install
 
+Install Plugy 14.01 from http://plugy.free.fr/en/index.html.
 Copy PlugY.dll from this [release](https://github.com/pairofdocs/plugy_fps_unlock/releases/tag/v1.0.0) and place it into your `Diablo II/` folder.
