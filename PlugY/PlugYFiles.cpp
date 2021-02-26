@@ -157,22 +157,26 @@ void Install_PlugYFiles()
 	// Add FPS cap unlock feature from BH 1.9.9 (write 8 NOPs at seek position)
 	// ________________________________________________________________________
 	
-	// only the 113c and 113d offsets are accurate (the 3rd to last and the 2nd to last)
-	// VERSION_113d = 1 in BH code. so maybe the 45EA1 offset won't work
+	// TODO: move this feature to a dedicated function 
+	
+	// Only the 113c and 113d offsets are accurate (the 3rd to last and the 2nd to last). Both 113c and 113d work when testing locally.
 	int address = R8(D2Client, 0, 0, 0, 0, 0, 0, 44E51, 45EA1, 45EA1);
 	
-	// Initalize variables for the exactly commands we are injecting.
-	int length = 8;
-	BYTE* code = new BYTE[length];
-	DWORD protect;
+	if ( version_D2Client == V113c || version_D2Client == V113d )
+	{
+		// Initalize variables for the exactly commands we are injecting
+		int length = 8;
+		BYTE* code = new BYTE[length];
+		DWORD protect;
 
-	// Set the code with all NOPs by default
-	memset(code, 0x90, length);
+		// Set the code with all NOPs by default
+		memset(code, 0x90, length);
 
-	// Write the patch in
-	VirtualProtect((VOID*)address, length, PAGE_EXECUTE_READWRITE, &protect);
-	memcpy_s((VOID*)address, length, code, length);
-	VirtualProtect((VOID*)address, length, protect, &protect);
+		// Write the patch in
+		VirtualProtect((VOID*)address, length, PAGE_EXECUTE_READWRITE, &protect);
+		memcpy_s((VOID*)address, length, code, length);
+		VirtualProtect((VOID*)address, length, protect, &protect);
+	}
 
 	log_msg("\n" );
 

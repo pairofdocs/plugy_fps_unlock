@@ -16,22 +16,11 @@ Patch* fpsPatch = new Patch(NOP, D2CLIENT, { 0x44E51, 0x45EA1 }, 0, 8);
 
 # Notes
 
-## FPS Unlock Would Work for D2 v1.13c or 1.13d Only
+## FPS Unlock Works for D2 v1.13c and 1.13d Only
 
 The offsets that are present in BH are for v1.13c and v1.13d.
-Offsets for v1.14 are required for this to work with v1.14.
+BH has not yet added this feature for v1.14+.
 
-```cpp
-struct Offsets {
-	int _113c;
-	int _113d;
-};
-```
-
-When a new Patch is created only the 1.13c and 1.13d offsets `{ 0x44E51, 0x45EA1 }` are provided:
-```cpp
-Patch* fpsPatch = new Patch(NOP, D2CLIENT, { 0x44E51, 0x45EA1 }, 0, 8);
-```
 
 # Install
 
