@@ -27,4 +27,11 @@ BH has not yet added this feature for v1.14+.
 Install Plugy v14.02 from http://plugy.free.fr/en/index.html.
 Copy PlugY.dll from this [release](https://github.com/pairofdocs/plugy_fps_unlock/releases/tag/v1.0.1) and place it into your `Diablo II/` folder.
 
-If you already have older versions of Plugy v14.01 or v11.02, use the respective Plugy.dll from this [release](https://github.com/pairofdocs/plugy_fps_unlock/releases/tag/v1.0.0)
+If you already have older versions of Plugy v14.01 or v11.02, use the respective Plugy.dll from this [release](https://github.com/pairofdocs/plugy_fps_unlock/releases/tag/v1.0.0).
+
+# Credits and Discussion
+A D2Mods.info / Phrozen Keep thread about this feature and implementations is [here](https://d2mods.info/forum/viewtopic.php?f=8&t=65239&p=501210#p501210).
+Credit goes out to devurandom, Necrolis, fearedbliss.
+
+@fearedbliss also implemented this FPS unlock feature for [Cactus](https://github.com/fearedbliss/Cactus).
+See the [notes](https://github.com/fearedbliss/Cactus/blob/master/README-SINGLING.md#notes).
