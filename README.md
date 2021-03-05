@@ -1,4 +1,4 @@
-https://travis-ci.com/pairofdocs/plugy_fps_unlock.svg?branch=master
+[![Build Status](https://travis-ci.com/pairofdocs/plugy_fps_unlock.svg?branch=master)](https://travis-ci.com/pairofdocs/plugy_fps_unlock)
 
 # Original Code
 [PlugY v14](http://plugy.free.fr/en/index.html)
