@@ -1,0 +1,4 @@
+os: windows
+language: cpp
+script:
+  - MSBuild.exe -p:Configuration=Release -p:Platform=x32 plugy_fps_unlock/PlugY/PlugY.vcxproj
