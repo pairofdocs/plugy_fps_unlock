@@ -6,4 +6,4 @@ install:
   - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
 script:
   - export PATH=$MSBUILD_PATH:$PATH
-  - MSBuild.exe -p:Configuration=Release -p:Platform=x32 ./PlugY/PlugY.vcxproj
+  - MSBuild.exe -p:Configuration=Release ./PlugY/PlugY.sln
