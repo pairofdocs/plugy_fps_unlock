@@ -1,9 +1,9 @@
 os: windows
 language: cpp
 env:
-  - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\Current\Bin"
+  - MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin"
 install:
-  - choco install visualstudio2017buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
+  - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
 script:
   - export PATH=$MSBUILD_PATH:$PATH
-  - MSBuild.exe -p:Configuration=Release -p:Platform=x32 plugy_fps_unlock/PlugY/PlugY.vcxproj
+  - MSBuild.exe -p:Configuration=Release -p:Platform=x64 plugy_fps_unlock/PlugY/PlugY.vcxproj
