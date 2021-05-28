@@ -8,6 +8,12 @@ FPS unlock / mouse fix feature from [BH 1.9.9](https://github.com/planqi/slashdi
 
 `Add option to remove FPS limit in single player` From BH [release notes](https://github.com/planqi/slashdiablo-maphack#release-notes-for-198)
 
+# Video of FPS cap
+In game the FPS is capped to 25 and the mouse is choppy, in the menus the FPS is uncapped and the mouse is smoother  
+https://www.youtube.com/watch?v=WAC4JfPzCTI  
+![FPS video thumbnail](https://user-images.githubusercontent.com/76428136/119921864-9cc74e00-bf23-11eb-8093-5e5dcf43a164.png)
+
+
 # Method
 Hex edit the running process D2client.dll
 
